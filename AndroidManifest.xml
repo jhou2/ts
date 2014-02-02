@@ -30,6 +30,10 @@
             android:name="com.example.cascadia.Welcome"
             android:label="@string/title_activity_welcome" >
         </activity>
+        <activity
+            android:name="com.example.cascadia.Timesheet"
+            android:label="@string/title_activity_timesheet" >
+        </activity>
     </application>
 
 </manifest>

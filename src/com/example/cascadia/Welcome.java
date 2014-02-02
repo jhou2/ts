@@ -2,6 +2,7 @@ package com.example.cascadia;
 
 import android.os.Bundle;
 import android.app.Activity;
+import android.content.Intent;
 import android.view.Menu;
 import android.view.View;
 import android.widget.AdapterView;
@@ -24,7 +25,7 @@ public class Welcome extends Activity {
 		adapter_project.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
 		// Apply the adapter to the spinner
 		spinner_project.setAdapter(adapter_project);
-		spinner_project.setOnItemSelectedListener(null);
+		
 		
 		
 		Spinner spinner_wp = (Spinner) findViewById(R.id.spinner_wp);	
@@ -32,7 +33,7 @@ public class Welcome extends Activity {
 		        R.array.wp_array, android.R.layout.simple_spinner_item);	// use CursorAdapter if database
 		adapter_wp.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
 		spinner_wp.setAdapter(adapter_wp);
-		spinner_wp.setOnItemSelectedListener(null);
+		
 		
 		
 	}
@@ -63,6 +64,10 @@ public class Welcome extends Activity {
 	    
 	}
 	
+	public void sendTimesheet(View view) {
+		Intent intent = new Intent(this, Timesheet.class);
+		startActivity(intent);
+	}
 	
 
 }
