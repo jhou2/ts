@@ -5,5 +5,15 @@
         android:orderInCategory="100"
         android:showAsAction="never"
         android:title="@string/action_settings"/>
+    <item android:id="@+id/save_option" 
+        android:title="@string/save"
+        android:showAsAction="ifRoom"></item>
+	<item android:id="@+id/sign_submit_option" 
+        android:title="@string/sign_submit"
+        android:showAsAction="never"></item>
+	<item android:id="@+id/logout_option" 
+        android:title="@string/logout"
+        android:showAsAction="ifRoom"></item>
+    
 
 </menu>

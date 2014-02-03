@@ -17,6 +17,7 @@ import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.NumberPicker;
 import android.widget.TextView;
 
 public class Timesheet extends FragmentActivity implements
@@ -36,6 +37,9 @@ public class Timesheet extends FragmentActivity implements
 	 * The {@link ViewPager} that will host the section contents.
 	 */
 	ViewPager mViewPager;
+	
+	// pass work package name
+	private static String token;
 
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
@@ -75,7 +79,11 @@ public class Timesheet extends FragmentActivity implements
 			actionBar.addTab(actionBar.newTab()
 					.setText(mSectionsPagerAdapter.getPageTitle(i))
 					.setTabListener(this));
+			
 		}
+
+		token = getIntent().getStringExtra("token");
+					
 	}
 
 	@Override
@@ -177,10 +185,31 @@ public class Timesheet extends FragmentActivity implements
 				Bundle savedInstanceState) {
 			View rootView = inflater.inflate(R.layout.fragment_timesheet_dummy,
 					container, false);
+			
+			String[] weekdays = {"Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday", "Sunday"};
+			
 			TextView dummyTextView = (TextView) rootView
 					.findViewById(R.id.section_label);
-			dummyTextView.setText(Integer.toString(getArguments().getInt(
-					ARG_SECTION_NUMBER)));
+			dummyTextView.setText(weekdays[getArguments().getInt(
+					ARG_SECTION_NUMBER) - 1]);
+		
+			NumberPicker np=
+					  (NumberPicker) rootView.findViewById(R.id.numberPicker1);
+					np.setMaxValue(24);
+					np.setMinValue(0);
+					np.setWrapSelectorWheel(false);
+				
+					NumberPicker np2 =
+							  (NumberPicker) rootView.findViewById(R.id.numberPicker2);
+							np2.setMaxValue(59);
+							np2.setMinValue(0);
+							np2.setWrapSelectorWheel(false);
+			
+							
+							TextView wp_name = (TextView) rootView.findViewById(R.id.wp_name);
+							// wp_name.setText(token);  //buggy 
+							
+							
 			return rootView;
 		}
 	}

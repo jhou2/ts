@@ -9,7 +9,7 @@
     tools:context=".MainActivity" >
 
     <TextView
-        android:id="@+id/textView1"
+        android:id="@+id/username"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_centerHorizontal="true"
@@ -20,15 +20,15 @@
         android:id="@+id/numberPicker3"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_alignLeft="@+id/textView1"
-        android:layout_below="@+id/textView1" />
+        android:layout_alignLeft="@+id/username"
+        android:layout_below="@+id/username" />
 
     <NumberPicker
         android:id="@+id/numberPicker2"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_alignParentRight="true"
-        android:layout_below="@+id/textView1"
+        android:layout_below="@+id/username"
         android:layout_marginRight="32dp" />
 
 </RelativeLayout>

@@ -9,13 +9,20 @@ import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
 import android.widget.Spinner;
 import android.widget.AdapterView.OnItemSelectedListener;
+import android.widget.TextView;
 
 public class Welcome extends Activity {
 
+	private String token;
+	
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
 		setContentView(R.layout.activity_welcome);
+		
+		token = getIntent().getStringExtra("token");
+		TextView name = (TextView) findViewById(R.id.username);
+		name.setText(token);
 		
 		Spinner spinner_project = (Spinner) findViewById(R.id.spinner_project);
 		// Create an ArrayAdapter using the string array and a default spinner layout
@@ -55,6 +62,9 @@ public class Welcome extends Activity {
 	            int pos, long id) {
 	        // An item was selected. You can retrieve the selected item using
 	        // parent.getItemAtPosition(pos)
+	    	
+	    	token = parent.getItemAtPosition(0).toString();
+	    	
 	    }
 
 	    public void onNothingSelected(AdapterView<?> parent) {
@@ -65,7 +75,9 @@ public class Welcome extends Activity {
 	}
 	
 	public void sendTimesheet(View view) {
+
 		Intent intent = new Intent(this, Timesheet.class);
+		intent.putExtra("token", token);
 		startActivity(intent);
 	}
 	

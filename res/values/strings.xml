@@ -33,6 +33,7 @@
     <string name="Saturday">Saturday</string>
     <string name="Sunday">Sunday</string>
     <string name="hours">Hours</string>
+    <string name="minutes">Minutes</string>
     <string name="goto_timesheet">Go to Time Sheet</string>
 
     <string-array name="projects_array">
@@ -56,5 +57,11 @@
     <string name="title_section5">F</string>
     <string name="title_section6">S</string>
     <string name="title_section7">S</string>
+    
+    <string name="save">Save</string>
+    <string name="sign_submit">Sign and Submit</string>
+    
+    <string name="work_package">Work Package:</string>
+    <string name="wp_name">WP Name</string>
 
 </resources>
